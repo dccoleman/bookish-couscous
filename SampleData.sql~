@@ -22,17 +22,3 @@ INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYe
 VALUES (4444444,'Bus','Rolls Royce','WealthMobile',1993,2);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
 VALUES (5555555,'Car','Dodge','Hellcat',2015,4);
-
---Location
-INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
-VALUES (1111111, "Some Place", "Restaurant","1234 somewhere street",7,5);
-INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
-VALUES (2222222, "The Moon", "Historic","Space",8,3);
-INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
-VALUES (3333333, "Death Star", "Museum","Really Far Away",9,8);
-INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
-VALUES (4444444, "Forest Moon of Endor", "Historic","Outer Rim",10,5);
-INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
-VALUES (5555555, "Worcester", "Restaurant","Middle of MA",11,111);
-
--- Customer 
