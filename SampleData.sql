@@ -23,16 +23,49 @@ VALUES (4444444,'Bus','Rolls Royce','WealthMobile',1993,2);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
 VALUES (5555555,'Car','Dodge','Hellcat',2015,4);
 
+--Tours
+INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, VehicleType, AdultCost, ChildCost)
+VALUES (1111111,'Tour A', 'Words', 'Worcester', 'MA', 7, 'Car', 10, 3);
+INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, VehicleType, AdultCost, ChildCost)
+VALUES (2222222,'Tour B', 'Words', 'D.C.', 'D.C.', 7, 'Amphibious', 10, 3);
+INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, VehicleType, AdultCost, ChildCost)
+VALUES (1111111,'Tour C', 'Words', 'Maryland', 'MA', 7, 'Bus', 10, 3);
+INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, VehicleType, AdultCost, ChildCost)
+VALUES (3333333,'Tour D', 'Words', 'Boston', 'MA', 7, 'Car', 10, 3);
+INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, VehicleType, AdultCost, ChildCost)
+VALUES (4444444,'Tour E', 'Words', 'Detroit', 'MI', 7, 'Car', 10, 3);
+INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, VehicleType, AdultCost, ChildCost)
+VALUES (5555555,'Tour F', 'Words', 'Las Vegas', 'Nevada', 7, 'Amphibious', 10, 3);
+
 --Location
 INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
-VALUES (1111111, "Some Place", "Restaurant","1234 somewhere street",7,5);
+VALUES (1111111, 'Some Place', 'Restaurant','1234 somewhere street',7,5);
 INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
-VALUES (2222222, "The Moon", "Historic","Space",8,3);
+VALUES (2222222, 'The Moon', 'Historic','Space',8,3);
 INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
-VALUES (3333333, "Death Star", "Museum","Really Far Away",9,8);
+VALUES (3333333, 'Death Star', 'Museum','Really Far Away',9,8);
 INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
-VALUES (4444444, "Forest Moon of Endor", "Historic","Outer Rim",10,5);
+VALUES (4444444, 'Forest Moon of Endor', 'Historic','Outer Rim',10,5);
 INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
-VALUES (5555555, "Worcester", "Restaurant","Middle of MA",11,111);
+VALUES (5555555, 'Worcester', 'Restaurant','Middle of MA',11,111);
 
 -- Customer 
+INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
+VALUES (1111111, 'John', 'Jacob jingle heimer schmitt','Drewry Lane',2223334444,7);
+INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
+VALUES (2222222, 'Jake', 'brown','100 Institute Rd. ',2223334444,7);
+INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
+VALUES (3333333, 'Alex', 'brown','100 Institute Rd. ',3334445555,7);
+INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
+VALUES (4444444, 'Ben', 'Stevens','20 Dix Street',4445556666,7);
+INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
+VALUES (5555555, 'Stan', 'van Zyl','21 Dix Street',5556667777,7);
+INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
+VALUES (6666666, 'Shirly', 'Price','22 Dix Street',6667778888,7);
+INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
+VALUES (7777777, 'Carol', 'Thompson','22 Dix Street',7778889999,7);
+INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
+VALUES (8888888, 'Nancy', 'Cyganski','23 Dix Street',8889991010,7);
+INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
+VALUES (9999999, 'Courtney', 'Dotson','3 Dean Street',9991011111,7);
+
