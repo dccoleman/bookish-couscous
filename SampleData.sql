@@ -62,10 +62,25 @@ INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
 VALUES (5555555, 'Stan', 'van Zyl','21 Dix Street',5556667777,7);
 INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
 VALUES (6666666, 'Shirly', 'Price','22 Dix Street',6667778888,7);
-INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
-VALUES (7777777, 'Carol', 'Thompson','22 Dix Street',7778889999,7);
-INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
-VALUES (8888888, 'Nancy', 'Cyganski','23 Dix Street',8889991010,7);
-INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
-VALUES (9999999, 'Courtney', 'Dotson','3 Dean Street',9991011111,7);
 
+-- TravelingWith
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (2222222, 1111111, 'John', 'Jacob jingle heimer schmitt',7);
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (3333333, 1111111, 'John', 'Jacob jingle heimer schmitt',7);
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (4444444, 1111111, 'John', 'Jacob jingle heimer schmitt',7);
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (5555555, 1111111, 'John', 'Jacob jingle heimer schmitt',7);
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (6666666, 1111111, 'John', 'Jacob jingle heimer schmitt',7);
+
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (3333333, 2222222, 'Jake', 'brown',7);
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (4444444, 3333333, 'Alex', 'brown',7);
+
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (5555555, 4444444, 'Ben', 'Stevens',7);
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (6666666, 4444444, 'Ben', 'Stevens',7);
