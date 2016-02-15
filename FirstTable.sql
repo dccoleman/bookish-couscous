@@ -1,13 +1,14 @@
+/* Dropping all tables */
 DROP TABLE Traveling;
-DROP TABLE Guide;
 DROP TABLE Vehicle;
-DROP TABLE Tour;
 DROP TABLE Location;
-DROP TABLE Customer;
 DROP TABLE TravelingWith;
 DROP TABLE BookedTour;
+DROP TABLE Customer;
+DROP TABLE Guide;
+DROP TABLE Tour;
 
-
+/* Creating tables*/
 CREATE TABLE Guide
 (
 DriverLicense varchar(13) CONSTRAINT Guide_PK PRIMARY KEY,
@@ -17,7 +18,9 @@ Phone int,
 VehicleType varchar(255), 
 Title varchar(255), 
 Salary int, 
-HireDate date
+HireDate date,
+CONSTRAINT guideTitle CHECK (Title in ('Junior Guide','Guide','Senior Guide')),
+CONSTRAINT guideVehicleType CHECK (VehicleType in ('Car','Amphibious','Bus'))
 );
 
 CREATE TABLE Vehicle
@@ -27,7 +30,8 @@ VehicleType varchar(255),
 VehicleMake varchar(255),
 VehicleModel varchar(255),
 VehicleYear int, 
-MaxPassenger int
+MaxPassenger int,
+CONSTRAINT vehicleType CHECK (VehicleType in ('Car','Amphibious','Bus'))
 );
 
 CREATE TABLE Tour
@@ -40,7 +44,8 @@ StateHeld varchar(255),
 Duration int, 
 VehicleType varchar(255), 
 AdultCost number,
-ChildCost number
+ChildCost number,
+CONSTRAINT tourVehicleType CHECK (VehicleType in ('Car','Amphibious','Bus'))
 );
 
 CREATE TABLE Location
@@ -50,7 +55,8 @@ LocationName varchar(255),
 LocationType varchar(255),
 LocationAddress int,
 Longitude number, 
-Latitude number
+Latitude number,
+CONSTRAINT locationTypeIs CHECK (LocationType in ('Historic','Museum','Restaurant'))
 );
 
 CREATE TABLE Traveling
@@ -73,23 +79,27 @@ Age int
 
 CREATE TABLE TravelingWith
 (
-TravelingWithID number(5),
+TravelingWithID varchar(13),
 CustomerID varchar(13),
 FirstName varchar(255),
 LastName varchar(255),
 Age int,
 CONSTRAINT TravelingWith_PK PRIMARY KEY (TravelingWithID,CustomerID),
-FOREIGN KEY (TravelingWithID) REFERENCES (Customer(CustomerID)),
-FOREIGN KEY (CustomerID) REFERENCES (Customer(CustomerID))
+FOREIGN KEY (TravelingWithID) REFERENCES Customer(CustomerID),
+FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
 );
 
 CREATE TABLE BookedTour
 (
-BookedTourID varchar(13),
+BookedTourID varchar(13) CONSTRAINT BookedTour_PK PRIMARY KEY,
 PurchaseDate date,
 TravelDate date,
 TotalPrice int,
 TourID varchar(13),
 DriverLicense varchar(13),
-CustomerID varchar(13)
+CustomerID varchar(13),
+FOREIGN KEY (TourID) REFERENCES Tour(TourID),
+FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
+FOREIGN KEY (DriverLicense) REFERENCES Guide(DriverLicense)
 );
+
