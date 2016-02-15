@@ -53,7 +53,7 @@ CREATE TABLE Location
 LocationID varchar(13) CONSTRAINT Location_PK PRIMARY KEY,
 LocationName varchar(255),
 LocationType varchar(255),
-LocationAddress int,
+LocationAddress varchar(255),
 Longitude number, 
 Latitude number,
 CONSTRAINT locationTypeIs CHECK (LocationType in ('Historic','Museum','Restaurant'))
