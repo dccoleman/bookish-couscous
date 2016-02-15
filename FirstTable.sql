@@ -1,11 +1,11 @@
 DROP TABLE Traveling;
-DROP TABLE Guide;
 DROP TABLE Vehicle;
-DROP TABLE Tour;
 DROP TABLE Location;
 DROP TABLE TravelingWith;
 DROP TABLE BookedTour;
 DROP TABLE Customer;
+DROP TABLE Guide;
+DROP TABLE Tour;
 
 
 CREATE TABLE Guide
