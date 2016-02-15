@@ -84,3 +84,13 @@ INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age
 VALUES (5555555, 4444444, 'Ben', 'Stevens',7);
 INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
 VALUES (6666666, 4444444, 'Ben', 'Stevens',7);
+
+--BookedTours
+INSERT INTO BookedTour (BookedTourID,TotalPrice,TourID,DriverLicense,LicensePlate,CustomerID)
+VALUES (1111111111111,111,1111111,1111111111111,1111111);
+INSERT INTO BookedTour (BookedTourID,TotalPrice,TourID,DriverLicense,LicensePlate,CustomerID)
+VALUES (2222222222222,222,2222222,2222222222222,2222222);
+INSERT INTO BookedTour (BookedTourID,TotalPrice,TourID,DriverLicense,LicensePlate,CustomerID)
+VALUES (3333333333333,333,3333333,3333333333333,3333333);
+INSERT INTO BookedTour (BookedTourID,TotalPrice,TourID,DriverLicense,LicensePlate,CustomerID)
+VALUES (4444444444444,444,4444444,4444444444444,4444444);
