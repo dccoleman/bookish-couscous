@@ -3,9 +3,9 @@ DROP TABLE Guide;
 DROP TABLE Vehicle;
 DROP TABLE Tour;
 DROP TABLE Location;
-DROP TABLE Customer;
 DROP TABLE TravelingWith;
 DROP TABLE BookedTour;
+DROP TABLE Customer;
 
 
 CREATE TABLE Guide
@@ -73,23 +73,26 @@ Age int
 
 CREATE TABLE TravelingWith
 (
-TravelingWithID number(5),
+TravelingWithID varchar(13),
 CustomerID varchar(13),
 FirstName varchar(255),
 LastName varchar(255),
 Age int,
 CONSTRAINT TravelingWith_PK PRIMARY KEY (TravelingWithID,CustomerID),
-FOREIGN KEY (TravelingWithID) REFERENCES (Customer(CustomerID)),
-FOREIGN KEY (CustomerID) REFERENCES (Customer(CustomerID))
+FOREIGN KEY (TravelingWithID) REFERENCES Customer(CustomerID),
+FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
 );
 
 CREATE TABLE BookedTour
 (
-BookedTourID varchar(13),
+BookedTourID varchar(13) CONSTRAINT BookedTour_PK PRIMARY KEY,
 PurchaseDate date,
 TravelDate date,
 TotalPrice int,
 TourID varchar(13),
 DriverLicense varchar(13),
-CustomerID varchar(13)
+CustomerID varchar(13),
+FOREIGN KEY (TourID) REFERENCES Tour(TourID),
+FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
+FOREIGN KEY (DriverLicense) REFERENCES Guide(DriverLicense)
 );
