@@ -23,6 +23,21 @@ GROUP BY Gu.DriverLicense, Gu.FirstName, Gu.LastName, Gu.Title;
 
 
 -- 5 
-SELECT T.TourName, COUNT(Tr.LocationType = 'Historic'), COUNT(Tr.LocationType = 'Museum'), COUNT(Tr.LocationType = 'Restaurant')
-FROM Tour T, (SELECT * FROM Traveling NATURAL JOIN Location) AS Tr
-GROUP BY T.TourName
+SELECT T.TourName, HIST.HistCount, MUES.MuesCount, REST.RestCount
+FROM Tour T, (
+SELECT Tr.TourID, COUNT(L.LocationType) AS HistCount
+FROM Traveling Tr, Location L
+GROUP BY Tr.TourID, L.LocationType
+HAVING L.LocationType Like 'Historic'
+) AS HIST,(
+SELECT Tr.TourID, COUNT(L.LocationType) AS MuesCount
+FROM Traveling Tr, Location L
+GROUP BY Tr.TourID, L.LocationType
+HAVING L.LocationType Like 'Museum'
+) AS MUES,(
+SELECT Tr.TourID, COUNT(L.LocationType) AS RestCount
+FROM Traveling Tr, Location L
+GROUP BY Tr.TourID, L.LocationType
+HAVING L.LocationType Like 'Restaurant'
+) AS REST
+GROUP BY T.TourID, T.TourName, HIST.HistCount, MUES.MuesCount, REST.RestCount;
