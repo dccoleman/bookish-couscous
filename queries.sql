@@ -13,12 +13,12 @@ AND Gu.DriverLicense = 1111111111111;
 SELECT Cu.CustomerID, Cu.FirstName, Cu.LastName, Cu.Age, COUNT(Bt.BookedTourID) AS cntBT
 FROM Customer Cu, BookedTour Bt
 WHERE Cu.CustomerID = Bt.CustomerID
-GROUP BY Cu.CustomerID, Cu.FirstName, Cu.LastName, Cu.Age
+GROUP BY Cu.CustomerID, Cu.FirstName, Cu.LastName, Cu.Age;
 
 -- 4
 SELECT Gu.DriversLicense, Gu.FirstName, Gu.LastName, Gu.Age, COUNT(Bt.BookedTourID) AS cntBT
 FROM Guide Gu, BookedTour Bt,
 WHERE Gu.DriversLicense = Bt.DriversLicense
-GROUP BY Gu.DriversLicense, Gu.FirstName, Gu.LastName, Gu.Title
+GROUP BY Gu.DriversLicense, Gu.FirstName, Gu.LastName, Gu.Title;
 
 
