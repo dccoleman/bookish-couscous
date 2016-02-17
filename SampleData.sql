@@ -1,27 +1,27 @@
 /* Inserting Sample Data into Tables */
 --Guides
-INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary)
-VALUES (1111111111111,'One','Un',1111111111,'Car','Junior Guide',1);
-INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary)
-VALUES (2222222222222,'Two','Deux',2222222222,'Amphibious','Senior Guide',2);
-INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary)
-VALUES (3333333333333,'Three','Trois',3333333333,'Bus','Guide',3);
-INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary)
-VALUES (4444444444444,'Four','Quatre',2222222222,'Amphibious','Guide',4);
-INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary)
-VALUES (5555555555555,'Five','Cinq',5555555555,'Bus','Senior Guide',5);
+INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
+VALUES (1111111111111,'One','Un',1111111111,'Car','Junior Guide',1,'01-JAN-2016');
+INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
+VALUES (2222222222222,'Two','Deux',2222222222,'Amphibious','Senior Guide',2,'02-FEB-2016');
+INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
+VALUES (3333333333333,'Three','Trois',3333333333,'Bus','Guide',3,'03-MAR-2000');
+INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
+VALUES (4444444444444,'Four','Quatre',2222222222,'Amphibious','Guide',4,'04-APR-2012');
+INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
+VALUES (5555555555555,'Five','Cinq',5555555555,'Bus','Senior Guide',5,'05-MAR-1995');
 
 --Vehicles
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
-VALUES (1111111,'Car','Ford','Mustang',1995,4);
+VALUES (1111111,'Car','Ford','Mustang','05-DEC-1996',4);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
-VALUES (2222222,'Bus','Mystery','Machine',1984,4);
+VALUES (2222222,'Bus','Mystery','Machine','12-JAN-2001',4);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
-VALUES (3333333,'Amphibious','Scrooge','McDuckMobile',1897,36);
+VALUES (3333333,'Amphibious','Scrooge','McDuckMobile','16-AUG-2002',36);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
-VALUES (4444444,'Bus','Rolls Royce','WealthMobile',1993,2);
+VALUES (4444444,'Bus','Rolls Royce','WealthMobile','30-MAY-1995',2);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
-VALUES (5555555,'Car','Dodge','Hellcat',2015,4);
+VALUES (5555555,'Car','Dodge','Hellcat','30-JAN-1000',4);
 
 --Tours
 INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, VehicleType, AdultCost, ChildCost)
@@ -86,18 +86,18 @@ INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age
 VALUES (6666666, 4444444, 'Ben', 'Stevens',7);
 
 --BookedTours
-INSERT INTO BookedTour (BookedTourID,TotalPrice,TourID,DriverLicense,CustomerID)
-VALUES (1111111111111,111,1111111,1111111111111,1111111);
-INSERT INTO BookedTour (BookedTourID,TotalPrice,TourID,DriverLicense,CustomerID)
-VALUES (2222222222222,222,2222222,2222222222222,2222222);
-INSERT INTO BookedTour (BookedTourID,TotalPrice,TourID,DriverLicense,CustomerID)
-VALUES (3333333333333,333,3333333,3333333333333,3333333);
-INSERT INTO BookedTour (BookedTourID,TotalPrice,TourID,DriverLicense,CustomerID)
-VALUES (4444444444444,444,4444444,4444444444444,4444444);
-INSERT INTO BookedTour (BookedTourID,TotalPrice,TourID,DriverLicense,CustomerID)
-VALUES (5555555555555,555,5555555,5555555555555,4444444);
-INSERT INTO BookedTour (BookedTourID,TotalPrice,TourID,DriverLicense,CustomerID)
-VALUES (6666666666666,666,0000000,5555555555555,6666666);
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (1111111111111,'01-JAN-2015','12-FEB-2016',111,1111111,1111111111111,1111111);
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (2222222222222,'20-FEB-2014','20-FEB-2014',222,2222222,2222222222222,2222222);
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (3333333333333,'31-MAY-2016','28-FEB-2018',333,3333333,3333333333333,3333333);
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (4444444444444,'20-OCT-2012','29-APR-2013',444,4444444,4444444444444,4444444);
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (5555555555555,'12-DEC-2015','30-MAR-2020',555,5555555,5555555555555,4444444);
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (6666666666666,'15-AUG-2020','15-AUG-2021',666,0000000,5555555555555,6666666);
 
 
 
