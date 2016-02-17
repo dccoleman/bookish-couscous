@@ -21,23 +21,44 @@ FROM Guide Gu, BookedTour Bt
 WHERE Gu.DriverLicense = Bt.DriverLicense
 GROUP BY Gu.DriverLicense, Gu.FirstName, Gu.LastName, Gu.Title;
 
+-- SELECT Tr.TourID, COUNT(L.LocationType) AS HistCount
+-- FROM Traveling Tr, Location L
+-- WHERE Tr.LocationID=L.LocationID
+-- GROUP BY Tr.TourID, L.LocationType
+-- HAVING L.LocationType Like 'Historic';
 
--- 5 
-SELECT T.TourName, HIST.HistCount, MUES.MuesCount, REST.RestCount
-FROM Tour T, (
-SELECT Tr.TourID, COUNT(L.LocationType) AS HistCount
-FROM Traveling Tr, Location L
-GROUP BY Tr.TourID, L.LocationType
-HAVING L.LocationType Like 'Historic'
-) AS HIST,(
-SELECT Tr.TourID, COUNT(L.LocationType) AS MuesCount
-FROM Traveling Tr, Location L
-GROUP BY Tr.TourID, L.LocationType
-HAVING L.LocationType Like 'Museum'
-) AS MUES,(
-SELECT Tr.TourID, COUNT(L.LocationType) AS RestCount
-FROM Traveling Tr, Location L
-GROUP BY Tr.TourID, L.LocationType
-HAVING L.LocationType Like 'Restaurant'
-) AS REST
-GROUP BY T.TourID, T.TourName, HIST.HistCount, MUES.MuesCount, REST.RestCount;
+-- SELECT Tr.TourID, COUNT(L.LocationType) AS MuesCount
+-- FROM Traveling Tr, Location L
+-- WHERE Tr.LocationID=L.LocationID
+-- GROUP BY Tr.TourID, L.LocationType
+-- HAVING L.LocationType Like 'Museum';
+
+-- SELECT Tr.TourID, COUNT(L.LocationType) AS RestCount
+-- FROM Traveling Tr, Location L
+-- WHERE Tr.LocationID=L.LocationID
+-- GROUP BY Tr.TourID, L.LocationType
+-- HAVING L.LocationType Like 'Restaurant';
+
+
+
+-- -- 5 
+-- SELECT DISTINCT T.TourName, HIST.HistCount, MUES.MuesCount, REST.RestCount
+-- FROM Tour T,
+-- 	(SELECT Tr.TourID, COUNT(L.LocationType) AS HistCount
+-- 	FROM Traveling Tr, Location L
+-- 	WHERE Tr.LocationID=L.LocationID
+-- 	GROUP BY Tr.TourID, L.LocationType
+-- 	HAVING L.LocationType Like 'Historic') HIST,
+-- 	(SELECT Tr.TourID, COUNT(L.LocationType) AS MuesCount
+-- 	FROM Traveling Tr, Location L
+-- 	WHERE Tr.LocationID=L.LocationID
+-- 	GROUP BY Tr.TourID, L.LocationType
+-- 	HAVING L.LocationType Like 'Museum') MUES,
+-- 	(SELECT Tr.TourID, COUNT(L.LocationType) AS RestCount
+-- 	FROM Traveling Tr, Location L
+-- 	WHERE Tr.LocationID=L.LocationID
+-- 	GROUP BY Tr.TourID, L.LocationType
+-- 	HAVING L.LocationType Like 'Restaurant') REST
+-- GROUP BY T.TourName, HIST.HistCount, MUES.MuesCount, REST.RestCount;
+
+
