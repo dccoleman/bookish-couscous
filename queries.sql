@@ -22,3 +22,7 @@ WHERE Gu.DriverLicense = Bt.DriverLicense
 GROUP BY Gu.DriverLicense, Gu.FirstName, Gu.LastName, Gu.Title;
 
 
+-- 5 
+SELECT T.TourName, COUNT(Tr.LocationType = 'Historic'), COUNT(Tr.LocationType = 'Museum'), COUNT(Tr.LocationType = 'Restaurant')
+FROM Tour T, (SELECT * FROM Traveling NATURAL JOIN Location) AS Tr
+GROUP BY T.TourName
