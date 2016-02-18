@@ -29,6 +29,15 @@ GROUP BY TourName, L.LocationType
 ORDER BY TourName;
 
 -- 6
+/* Report the number of people taking each of the different tours.
+Include the TourName, City, State and VehicleType. Make sure to count
+the primary customer as well as those who are traveling along with him or her. */
+
+SELECT TourName, Stateheld, City, VehicleType, COUNT(Tw.CustomerID)
+FROM TravelingWith Tw, BookedTour B, Tour T
+WHERE B.TourID = T.TourID AND B.CustomerID = Tw.TravelingWithID
+GROUP BY TourName, TravelingWithID, Stateheld, City, VehicleType
+ORDER BY TourName;
 
 -- 7
 SELECT CustomerID
