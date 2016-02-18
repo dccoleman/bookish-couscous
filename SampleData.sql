@@ -3,7 +3,7 @@ CREATE TRIGGER EvalBookedTourTotal
 BEFORE INSERT ON BookedTour
 FOR EACH ROW 
 DECLARE
-	cursor curs1(CID in VARCHAR2) is
+	cursor curs1(CID in VARCHAR) is
 		(SELECT TravelingWith.Age
 		FROM TravelingWith
 		WHERE TravelingWith.CustomerID = CID)
