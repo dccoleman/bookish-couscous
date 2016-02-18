@@ -1,8 +1,7 @@
-Things to Add: 
-	SQL Queries
-		
-		
-		
+Partners:
+Troy Hughes - thhughes
+Devon Coleman - dccoleman
+	
 Assumptions: 
 	Traveling With: We assume that the TravelingWithID is the ID of the person that they are traveling with, whereas the customerID is their own ID. 
 	We are assuming that all ID's can be just about anything as long as they are not too long. We're consistent internally.
