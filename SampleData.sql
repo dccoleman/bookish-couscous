@@ -1,3 +1,32 @@
+
+CREATE TRIGGER EvalBookedTourTotal
+BEFORE INSERT ON BookedTour
+FOR EACH ROW 
+DECLARE
+	cursor curs1(CID in VARCHAR2) is
+		(SELECT TravelingWith.Age
+		FROM TravelingWith
+		WHERE TravelingWith.CustomerID = CID)
+		
+		UNION
+		
+		(SELECT Customer.Age
+		FROM Customer
+		WHERE CID = Customer.CustomerID);
+BEGIN 
+:new.TotalPrice :=0;
+	FOR currentAge in curs1(:new.CustomerID) LOOP
+		IF (currentAge < 18) THEN 
+			:new.TotalPrice := :new.TotalPrice + 50;
+		ELSE :new.TotalPrice := :new.TotalPrice + 100;
+		END IF;
+	END LOOP;
+END; 
+/
+
+	
+	
+
 /* Inserting Sample Data into Tables */
 --Guides
 INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
@@ -98,7 +127,8 @@ INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,D
 VALUES (5555555555555,'12-DEC-2015','30-MAR-2020',555,5555555,5555555555555,4444444);
 INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
 VALUES (6666666666666,'15-AUG-2020','15-AUG-2021',666,0000000,5555555555555,6666666);
-
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (7777777777777,'15-AUG-2021','16-AUG-2021',666,0000000,5555555555555,6666666);
 
 
 -- Traveling
