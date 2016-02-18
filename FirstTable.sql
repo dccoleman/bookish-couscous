@@ -29,7 +29,7 @@ LicensePlate varchar(7) CONSTRAINT Vehicle_PK PRIMARY KEY,
 VehicleType varchar(255),
 VehicleMake varchar(255),
 VehicleModel varchar(255),
-VehicleYear int, 
+VehicleYear date, 
 MaxPassenger int,
 CONSTRAINT vehicleType CHECK (VehicleType in ('Car','Amphibious','Bus'))
 );
