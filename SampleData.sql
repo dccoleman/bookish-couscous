@@ -16,7 +16,7 @@ DECLARE
 BEGIN 
 :new.TotalPrice :=0;
 	FOR currentAge in curs1(:new.CustomerID) LOOP
-		IF (currentAge < 18) THEN 
+		IF (currentAge.Age < 18) THEN 
 			:new.TotalPrice := :new.TotalPrice + 50;
 		ELSE :new.TotalPrice := :new.TotalPrice + 100;
 		END IF;
