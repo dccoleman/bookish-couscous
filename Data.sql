@@ -7,23 +7,23 @@
 INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
 VALUES (1111111111111,'One','Un',1111111111,'Car','Junior Guide',1,'01-JAN-2016');
 INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
-VALUES (2222222222222,'Two','Deux',2222222222,'Amphibious','Senior Guide',2,'02-FEB-2016');
+VALUES (2222222222222,'Two','Deux',2222222222,'Amphibious','Senior Guide',50001,'02-FEB-2016');
 INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
 VALUES (3333333333333,'Three','Trois',3333333333,'Bus','Guide',3,'03-MAR-2000');
 INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
 VALUES (4444444444444,'Four','Quatre',2222222222,'Amphibious','Guide',4,'04-APR-2012');
 INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
-VALUES (5555555555555,'Five','Cinq',5555555555,'Bus','Senior Guide',5,'05-MAR-1995');
+VALUES (5555555555555,'Five','Cinq',5555555555,'Bus','Senior Guide',50000000,'05-MAR-1995');
 INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
 VALUES (1212121212121,'OneOne','UnUn',1111111112,'Car','Junior Guide',1,'01-JAN-2016');
 INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
-VALUES (2323232323232,'TwoTwo','DeuxDeux',2222222223,'Amphibious','Senior Guide',2,'02-FEB-2016');
+VALUES (2323232323232,'TwoTwo','DeuxDeux',2222222223,'Amphibious','Senior Guide',222222,'02-FEB-2016');
 INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
 VALUES (3434343434343,'ThreeThree','TroisTrois',3333333334,'Bus','Guide',3,'03-MAR-2000');
 INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
 VALUES (4545454545454,'FourFour','QuatreQuatre',2222222223,'Amphibious','Guide',4,'04-APR-2012');
 INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
-VALUES (5656565656565,'FiveFive','CinqCinq',5555555556,'Bus','Senior Guide',5,'05-MAR-1995');
+VALUES (5656565656565,'FiveFive','CinqCinq',5555555556,'Bus','Senior Guide',100000,'05-MAR-1995');
 
 
 
@@ -33,21 +33,21 @@ VALUES (5656565656565,'FiveFive','CinqCinq',5555555556,'Bus','Senior Guide',5,'0
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
 VALUES (1111111,'Car','Ford','Mustang','05-DEC-1996',4);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
-VALUES (2222222,'Bus','Mystery','Machine','12-JAN-2001',4);
+VALUES (2222222,'Bus','Mystery','Machine','12-JAN-2012',4);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
 VALUES (3333333,'Amphibious','Scrooge','McDuckMobile','16-AUG-2002',36);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
-VALUES (4444444,'Bus','Rolls Royce','WealthMobile','30-MAY-1995',2);
+VALUES (4444444,'Bus','Rolls Royce','WealthMobile','30-MAY-3001',2);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
 VALUES (5555555,'Car','Dodge','Hellcat','30-JAN-1000',4);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
 VALUES (1212121,'Car','Ford','Mustang','05-DEC-1996',4);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
-VALUES (2323232,'Bus','Mystery','Machine','12-JAN-2001',4);
+VALUES (2323232,'Bus','Mystery','Machine','12-JAN-2021',4);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
 VALUES (3434343,'Amphibious','Scrooge','McDuckMobile','16-AUG-2002',36);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
-VALUES (4545454,'Bus','Rolls Royce','WealthMobile','30-MAY-1995',2);
+VALUES (4545454,'Bus','Rolls Royce','WealthMobile','30-MAY-2011',2);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
 VALUES (5656565,'Car','Dodge','Hellcat','30-JAN-1000',4);
 

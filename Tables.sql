@@ -136,15 +136,62 @@ END;
 
 /* Part 2 */ 
 -- Problem 1
+/*
+	This will error out if a Senior Guide is entered that has a salary < $50,000
+*/
 CREATE TRIGGER SrGuideSalaryCheck
 BEFORE INSERT OR UPDATE ON Guide
 FOR EACH ROW
 BEGIN 
-	IF (:new.salary < 50000) Then
-		RAISE_APPLICATION_ERROR(-20004, 'Rank not connected');
+	IF (:new.title = 'Senior Guide') Then
+		IF (:new.salary < 50000) Then
+			RAISE_APPLICATION_ERROR(-20003, 'Pay your Senior Guides More than 50,000!');
+		END IF;
 	END IF;
 END;
 /
 
+-- Problem 2
+/*
+	This will error out if the Bus that is entered was not made after Jan 1 of 2010
+*/
+CREATE TRIGGER BusAgeChecking
+BEFORE INSERT OR UPDATE ON Vehicle
+FOR EACH ROW
+BEGIN 
+	IF (:new.VehicleType = 'Bus') Then
+		IF (:new.VehicleYear < '01-JAN-2010') Then
+			RAISE_APPLICATION_ERROR(-20003, 'Get a newer bus!');
+		END IF;
+	END IF;
+END;
+/
 	
 	
+	
+-- Problem 3
+CREATE TRIGGER CheckTBostonTourVehicle
+BEFORE INSERT OR UPDATE ON Tours
+FOR EACH ROW
+BEGIN 
+	IF (:new.City = 'Boston') Then
+		IF (:new.VehicleType = 'Bus') Then
+			RAISE_APPLICATION_ERROR(-20003, 'Vehicle type must be amphibious');
+		END IF;
+		IF (:new.VehicleType = 'Car') Then
+			RAISE_APPLICATION_ERROR(-20003, 'Vehicle type must be amphibious');
+		END IF;
+	END IF;
+END;
+/
+
+
+
+
+
+
+
+
+
+
+
