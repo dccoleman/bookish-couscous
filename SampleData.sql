@@ -39,6 +39,20 @@ INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Sala
 VALUES (4444444444444,'Four','Quatre',2222222222,'Amphibious','Guide',4,'04-APR-2012');
 INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
 VALUES (5555555555555,'Five','Cinq',5555555555,'Bus','Senior Guide',5,'05-MAR-1995');
+INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
+VALUES (1212121212121,'OneOne','UnUn',1111111112,'Car','Junior Guide',1,'01-JAN-2016');
+INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
+VALUES (2323232323232,'TwoTwo','DeuxDeux',2222222223,'Amphibious','Senior Guide',2,'02-FEB-2016');
+INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
+VALUES (3434343434343,'ThreeThree','TroisTrois',3333333334,'Bus','Guide',3,'03-MAR-2000');
+INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
+VALUES (4545454545454,'FourFour','QuatreQuatre',2222222223,'Amphibious','Guide',4,'04-APR-2012');
+INSERT INTO Guide (DriverLicense,FirstName,LastName,Phone,VehicleType,Title,Salary,HireDate)
+VALUES (5656565656565,'FiveFive','CinqCinq',5555555556,'Bus','Senior Guide',5,'05-MAR-1995');
+
+
+
+
 
 --Vehicles
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
@@ -51,6 +65,16 @@ INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYe
 VALUES (4444444,'Bus','Rolls Royce','WealthMobile','30-MAY-1995',2);
 INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
 VALUES (5555555,'Car','Dodge','Hellcat','30-JAN-1000',4);
+INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
+VALUES (1212121,'Car','Ford','Mustang','05-DEC-1996',4);
+INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
+VALUES (2323232,'Bus','Mystery','Machine','12-JAN-2001',4);
+INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
+VALUES (3434343,'Amphibious','Scrooge','McDuckMobile','16-AUG-2002',36);
+INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
+VALUES (4545454,'Bus','Rolls Royce','WealthMobile','30-MAY-1995',2);
+INSERT INTO Vehicle (LicensePlate,VehicleType,VehicleMake,VehicleModel,VehicleYear,MaxPassenger)
+VALUES (5656565,'Car','Dodge','Hellcat','30-JAN-1000',4);
 
 --Tours
 INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, VehicleType, AdultCost, ChildCost)
@@ -65,6 +89,18 @@ INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, Vehi
 VALUES (4444444,'Tour E', 'Words', 'Detroit', 'MI', 7, 'Car', 10, 3);
 INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, VehicleType, AdultCost, ChildCost)
 VALUES (5555555,'Tour F', 'Words', 'Las Vegas', 'Nevada', 7, 'Amphibious', 10, 3);
+INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, VehicleType, AdultCost, ChildCost)
+VALUES (1212121,'Tour G', 'Words', 'Worcester', 'MA', 7, 'Car', 10, 3);
+INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, VehicleType, AdultCost, ChildCost)
+VALUES (2323232,'Tour H', 'Words', 'D.C.', 'D.C.', 7, 'Amphibious', 10, 3);
+INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, VehicleType, AdultCost, ChildCost)
+VALUES (0101010,'Tour I', 'Words', 'Maryland', 'MA', 7, 'Bus', 10, 3);
+INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, VehicleType, AdultCost, ChildCost)
+VALUES (3434343,'Tour J', 'Words', 'Boston', 'MA', 7, 'Car', 10, 3);
+INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, VehicleType, AdultCost, ChildCost)
+VALUES (4545454,'Tour K', 'Words', 'Detroit', 'MI', 7, 'Car', 10, 3);
+INSERT INTO Tour (TourID, TourName, Description, City, StateHeld, Duration, VehicleType, AdultCost, ChildCost)
+VALUES (5656565,'Tour L', 'Words', 'Las Vegas', 'Nevada', 7, 'Amphibious', 10, 3);
 
 --Location
 INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
@@ -77,6 +113,16 @@ INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, L
 VALUES (4444444, 'Forest Moon of Endor', 'Historic','Outer Rim',10,5);
 INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
 VALUES (5555555, 'Worcester', 'Restaurant','Middle of MA',11,111);
+INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
+VALUES (1212121, 'Some Place', 'Restaurant','1234 somewhere street',7,5);
+INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
+VALUES (2323232, 'The Moon', 'Historic','Space',8,3);
+INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
+VALUES (3434343, 'Death Star', 'Museum','Really Far Away',9,8);
+INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
+VALUES (4545454, 'Forest Moon of Endor', 'Historic','Outer Rim',10,5);
+INSERT INTO Location (LocationID, LocationName, LocationType, LocationAddress, Longitude, Latitude)
+VALUES (5656565, 'Worcester', 'Restaurant','Middle of MA',11,111);
 
 -- Customer 
 INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
@@ -91,6 +137,23 @@ INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
 VALUES (5555555, 'Stan', 'van Zyl','21 Dix Street',5556667777,7);
 INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
 VALUES (6666666, 'Shirly', 'Price','22 Dix Street',6667778888,7);
+INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
+VALUES (1212121, 'Abby', 'Jacob jingle heimer schmitt','Drewry Lane',2223334445,100);
+INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
+VALUES (2323232, 'Elzani', 'brown','100 Institute Rd. ',2223334446,100);
+INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
+VALUES (3434343, 'Kyle', 'brown','100 Institute Rd. ',3334445556,100);
+INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
+VALUES (4545454, 'Ben', 'Vincentelli','20 Dix Street',4445556667,100);
+INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
+VALUES (5656565, 'Stan', 'Lee','21 Dix Street',5556667778,100);
+INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
+VALUES (6767676, 'Shirly', 'Temple','22 Dix Street',6667778889,100);
+
+
+
+
+-- Still Need to Double the Below Data
 
 -- TravelingWith
 INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
