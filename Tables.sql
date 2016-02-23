@@ -139,12 +139,8 @@ END;
 CREATE TRIGGER SrGuideSalaryCheck
 BEFORE INSERT OR UPDATE ON Guide
 FOR EACH ROW
-DECLARE 
-	minSal int 
-
 BEGIN 
-	minSal := 50000
-	IF (:new.salary < minSal) Then
+	IF (:new.salary < 50000) Then
 		RAISE_APPLICATION_ERROR(-20004, 'Rank not connected');
 	END IF;
 END;
