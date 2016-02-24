@@ -1,0 +1,17 @@
+package dbProjectWork;
+
+public class Reporting {
+
+	public static void main(String[] args) {
+		int count = args.length;
+		if (count != 2){
+			System.out.println("Please input only the Username and Password to the SQL Account");
+			System.exit(1);
+		}
+		System.out.println("System Initilizing...");
+		Database db = new Database(args[0], args[1]);
+		db.whoIs();
+
+	}
+
+}
