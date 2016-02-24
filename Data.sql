@@ -167,7 +167,8 @@ INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,D
 VALUES (6666666666666,'15-AUG-2020','15-AUG-2021',666,0000000,5555555555555,6666666);
 INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
 VALUES (7777777777777,'15-AUG-2021','16-AUG-2021',666,0000000,5555555555555,6666666);
-
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (8888888888888,'15-AUG-2021','16-AUG-2021',666,0000000,5555555555555,6666666);
 
 -- Traveling
 INSERT INTO Traveling (TourID, LocationID)

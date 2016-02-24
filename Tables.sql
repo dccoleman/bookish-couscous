@@ -105,6 +105,8 @@ FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
 FOREIGN KEY (DriverLicense) REFERENCES Guide(DriverLicense)
 );
 
+SET SERVEROUTPUT ON FORMAT WORD_WRAPPED;
+
 
 /* Triggers */
 -- Project 2 Trigger
@@ -197,5 +199,23 @@ BEFORE INSERT ON BookedTour
 FOR EACH ROW
 BEGIN
 	:new.PurchaseDate := ADD_MONTHS(SYSDATE, 3);
+END;
+/
+
+PROMPT =========Guides Booking More than One Tour A Day=========
+CREATE TRIGGER GuideTourBookLimiter
+BEFORE INSERT ON BookedTour
+FOR EACH ROW
+DECLARE
+	CURSOR c1(DL in VARCHAR) IS
+	SELECT DriverLicense, TravelDate
+	FROM BookedTour
+	WHERE DriverLicense = DL;
+BEGIN
+	FOR TravelDate in c1(:new.DriverLicense) LOOP
+		IF :new.TravelDate = TravelDate.TravelDate THEN
+			RAISE_APPLICATION_ERROR(-20003, 'Guide already has tour booked that day');
+		END IF;
+	END LOOP;
 END;
 /
