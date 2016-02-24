@@ -126,10 +126,6 @@ INSERT INTO Customer (CustomerID, FirstName, LastName, Address, Phone, Age)
 VALUES (6767676, 'Shirly', 'Temple','22 Dix Street',6667778889,100);
 
 
-
-
--- Still Need to Double the Below Data
-
 -- TravelingWith
 INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
 VALUES (2222222, 1111111, 'John', 'Jacob jingle heimer schmitt',7);
@@ -141,24 +137,44 @@ INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age
 VALUES (5555555, 1111111, 'John', 'Jacob jingle heimer schmitt',7);
 INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
 VALUES (6666666, 1111111, 'John', 'Jacob jingle heimer schmitt',7);
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (1212121, 1111111, 'John', 'Jacob jingle heimer schmitt',7);
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (2323232, 1111111, 'John', 'Jacob jingle heimer schmitt',7);
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (3434343, 1111111, 'John', 'Jacob jingle heimer schmitt',7);
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (4545454, 1111111, 'John', 'Jacob jingle heimer schmitt',7);
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (5656565, 1111111, 'John', 'Jacob jingle heimer schmitt',7);
 
 INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
 VALUES (3333333, 2222222, 'Jake', 'brown',7);
 INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
 VALUES (4444444, 3333333, 'Alex', 'brown',7);
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (1212121, 2222222, 'Jake', 'brown',7);
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (2323232, 3333333, 'Alex', 'brown',7);
 
 INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
 VALUES (5555555, 4444444, 'Ben', 'Stevens',7);
 INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
 VALUES (6666666, 4444444, 'Ben', 'Stevens',7);
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (5656565, 4444444, 'Ben', 'Stevens',7);
+INSERT INTO TravelingWith (TravelingWithID, CustomerID, FirstName, LastName, Age)
+VALUES (6767676, 4444444, 'Ben', 'Stevens',7);
+
 
 --BookedTours
+PROMPT =============BOOKED TOURS=============
 INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
 VALUES (1111111111111,'01-JAN-2015','12-FEB-2016',111,1111111,1111111111111,1111111);
 INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
 VALUES (2222222222222,'20-FEB-2014','20-FEB-2014',222,2222222,2222222222222,2222222);
 INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
-VALUES (3333333333333,'31-MAY-2016','28-FEB-2018',333,3333333,3333333333333,3333333);
+VALUES (3333333333333,'31-MAY-2016','28-FEB-2018',333,4444444,3333333333333,3333333);
 INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
 VALUES (4444444444444,'20-OCT-2012','29-APR-2013',444,4444444,4444444444444,4444444);
 INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
@@ -168,8 +184,26 @@ VALUES (6666666666666,'15-AUG-2020','15-AUG-2021',666,0000000,5555555555555,6666
 INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
 VALUES (7777777777777,'15-AUG-2021','16-AUG-2021',666,0000000,5555555555555,6666666);
 INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
-VALUES (8888888888888,'15-AUG-2021','16-AUG-2021',666,0000000,5555555555555,6666666);
+VALUES (8888888888888,'15-AUG-2021','17-AUG-2021',666,0000000,5555555555555,6666666);
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (9999999999999,'01-JAN-2015','26-FEB-2016',111,1111111,1111111111111,1111111);
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (1010101010101,'20-FEB-2014','29-JUN-2014',222,2222222,2222222222222,2222222);
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (1101101101101,'31-MAY-2016','21-FEB-2018',333,4444444,3333333333333,3333333);
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (1212121212121,'20-OCT-2012','10-APR-2013',444,4444444,4444444444444,4444444);
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (1313131313131,'12-DEC-2015','31-MAR-2020',555,5555555,5555555555555,4444444);
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (1414141414141,'15-AUG-2020','13-AUG-2021',666,0000000,5555555555555,6666666);
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (1515151515151,'15-AUG-2021','12-AUG-2021',666,0000000,5555555555555,6666666);
+INSERT INTO BookedTour (BookedTourID,PurchaseDate,TravelDate,TotalPrice,TourID,DriverLicense,CustomerID)
+VALUES (1616161616161,'15-AUG-2021','29-AUG-2021',666,0000000,5555555555555,6666666);
+PROMPT ===================END BOOKED TOURS===================
 
+-- Still Need to Double the Below Data
 -- Traveling
 INSERT INTO Traveling (TourID, LocationID)
 VALUES (1111111, 1111111);
