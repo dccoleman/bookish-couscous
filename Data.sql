@@ -205,16 +205,27 @@ PROMPT ===================END BOOKED TOURS===================
 
 -- Still Need to Double the Below Data
 -- Traveling
+PROMPT ==1s==
 INSERT INTO Traveling (TourID, LocationID)
 VALUES (1111111, 1111111);
 INSERT INTO Traveling (TourID, LocationID)
 VALUES (1111111, 2222222);
+INSERT INTO Traveling (TourID, LocationID)
+VALUES (1111111, 3333333);
+INSERT INTO Traveling (TourID, LocationID)
+VALUES (1111111, 4444444);
 
+PROMPT ==4s==
 INSERT INTO Traveling (TourID, LocationID)
 VALUES (4444444, 3333333);
 INSERT INTO Traveling (TourID, LocationID)
 VALUES (4444444, 2222222);
+INSERT INTO Traveling (TourID, LocationID)
+VALUES (4444444, 1111111);
+INSERT INTO Traveling (TourID, LocationID)
+VALUES (4444444, 5555555);
 
+PROMPT ==2s==
 INSERT INTO Traveling (TourID, LocationID)
 VALUES (2222222, 1111111);
 INSERT INTO Traveling (TourID, LocationID)
@@ -225,17 +236,38 @@ INSERT INTO Traveling (TourID, LocationID)
 VALUES (2222222, 5555555);
 INSERT INTO Traveling (TourID, LocationID)
 VALUES (2222222, 2222222);
+INSERT INTO Traveling (TourID, LocationID)
+VALUES (2222222, 1212121);
+INSERT INTO Traveling (TourID, LocationID)
+VALUES (2222222, 2323232);
+INSERT INTO Traveling (TourID, LocationID)
+VALUES (2222222, 3434343);
+INSERT INTO Traveling (TourID, LocationID)
+VALUES (2222222, 4545454);
+INSERT INTO Traveling (TourID, LocationID)
+VALUES (2222222, 5656565);
 
+PROMPT ==3s==
 INSERT INTO Traveling (TourID, LocationID)
-VALUES (3333333, 4444444);
+VALUES (1212121, 4444444);
 INSERT INTO Traveling (TourID, LocationID)
-VALUES (3333333, 5555555);
+VALUES (1212121, 5555555);
 INSERT INTO Traveling (TourID, LocationID)
-VALUES (3333333, 2222222);
+VALUES (1212121, 2222222);
+INSERT INTO Traveling (TourID, LocationID)
+VALUES (1212121, 1111111);
+INSERT INTO Traveling (TourID, LocationID)
+VALUES (1212121, 1212121);
+INSERT INTO Traveling (TourID, LocationID)
+VALUES (1212121, 2323232);
 
+PROMPT ==0s==
 INSERT INTO Traveling (TourID, LocationID)
 VALUES (0000000, 2222222);
-
 INSERT INTO Traveling (TourID, LocationID)
 VALUES (0000000, 1111111);
+INSERT INTO Traveling (TourID, LocationID)
+VALUES (0000000, 3333333);
+INSERT INTO Traveling (TourID, LocationID)
+VALUES (0000000, 4444444);
 
