@@ -108,6 +108,8 @@ FOREIGN KEY (DriverLicense) REFERENCES Guide(DriverLicense)
 
 /* Triggers */
 -- Project 2 Trigger
+PROMPT =========EVALBOOKEDTOURTOTAL=========
+
 CREATE TRIGGER EvalBookedTourTotal
 BEFORE INSERT ON BookedTour
 FOR EACH ROW 
@@ -139,6 +141,8 @@ END;
 /*
 	This will error out if a Senior Guide is entered that has a salary < $50,000
 */
+PROMPT =========SRGUIDESALARYCHECK=========
+
 CREATE TRIGGER SrGuideSalaryCheck
 BEFORE INSERT OR UPDATE ON Guide
 FOR EACH ROW
@@ -155,6 +159,7 @@ END;
 /*
 	This will error out if the Bus that is entered was not made after Jan 1 of 2010
 */
+PROMPT =========BUSAGECHECKING=========
 CREATE TRIGGER BusAgeChecking
 BEFORE INSERT OR UPDATE ON Vehicle
 FOR EACH ROW
@@ -168,10 +173,10 @@ END;
 /
 	
 	
-	
+PROMPT =========CHECKTBOSTONTOURVEHICLE=========
 -- Problem 3
 CREATE TRIGGER CheckTBostonTourVehicle
-BEFORE INSERT OR UPDATE ON Tours
+BEFORE INSERT OR UPDATE ON Tour
 FOR EACH ROW
 BEGIN 
 	IF (:new.City = 'Boston') Then
@@ -185,13 +190,12 @@ BEGIN
 END;
 /
 
-
-
-
-
-
-
-
-
-
-
+PROMPT =========SETPURCHASEDATE=========
+-- Problem 4
+CREATE TRIGGER SetPurchaseDate
+BEFORE INSERT ON BookedTour
+FOR EACH ROW
+BEGIN
+	:new.PurchaseDate := ADD_MONTHS(SYSDATE, 3);
+END;
+/
