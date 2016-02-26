@@ -1,6 +1,4 @@
 package problems;
-import java.util.Scanner;
-
 import dbProjectWork.Database;
 
 public abstract class AProblem {
@@ -20,15 +18,7 @@ public abstract class AProblem {
 	}
 	
 	public Integer getInput(String prompt){
-		/* Prompt the user and get the input */
-		System.out.println(prompt);
-		Scanner scan = new Scanner(System.in);
-		int i = scan.nextInt();
-		if(i < 0){
-			return -1;
-		}else{
-			return i;
-		}
+		return 0;
 	}
 	
 	
