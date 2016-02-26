@@ -1,0 +1,8 @@
+package dbProjectWork;
+
+public class Problem1 {
+	String theOutput = new String("");
+	public Problem1(Database theDatabase){
+		
+	}
+}

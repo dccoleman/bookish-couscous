@@ -1,0 +1,17 @@
+package problems;
+import dbProjectWork.Database;
+
+public abstract class AProblem {
+	String theOutput;
+	Database theDatabase = new Database();
+	public AProblem(Database theDatabase){
+		/* Does The Query Stuffs
+		 * 
+		 */
+	}
+	
+	public String solve(){
+		System.out.println("This problem hasn't been solved yet");
+		return theOutput;
+	}
+}

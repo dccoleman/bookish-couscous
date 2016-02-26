@@ -1,0 +1,6 @@
+package problems;
+
+public interface Aproblem {
+	
+	String solve();
+}

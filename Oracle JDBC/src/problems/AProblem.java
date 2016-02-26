@@ -1,0 +1,19 @@
+package problems;
+import dbProjectWork.Database;
+
+public abstract class AProblem {
+	String theOutput = new String("NOT COMPLETED YET");
+	Database theDatabase;
+	
+	public AProblem(Database theDatabase){
+		this.theDatabase = theDatabase;
+		/* Does The Query Stuffs
+		 * 
+		 */
+	}
+	
+	public String solve(){
+		System.out.println("This problem hasn't been solved yet");
+		return theOutput;
+	}
+}

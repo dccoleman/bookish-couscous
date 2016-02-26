@@ -1,4 +1,6 @@
 import java.sql.*;
+
+
 public class otest {
 		// Replace the "USERID" and "PASSWORD" with your username and password to get this to work.
 		// Note: Remember that your Oracle USERID for many of you is different than your regular login name
