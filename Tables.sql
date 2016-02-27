@@ -2,13 +2,13 @@
 
 /* Dropping all tables */
 DROP TABLE Traveling;
-DROP TABLE Vehicle;
 DROP TABLE Location;
 DROP TABLE TravelingWith;
 DROP TABLE BookedTour;
 DROP TABLE Customer;
 DROP TABLE Guide;
 DROP TABLE Tour;
+DROP TABLE Vehicle;
 
 /* Creating tables */
 CREATE TABLE Guide
@@ -100,10 +100,21 @@ TotalPrice int,
 TourID varchar(13),
 DriverLicense varchar(13),
 CustomerID varchar(13),
+LicensePlate varchar(7),
 FOREIGN KEY (TourID) REFERENCES Tour(TourID),
 FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
-FOREIGN KEY (DriverLicense) REFERENCES Guide(DriverLicense)
+FOREIGN KEY (DriverLicense) REFERENCES Guide(DriverLicense),
+FOREIGN KEY (LicensePlate) REFERENCES Vehicle(LicensePlate)
 );
+
+CREATE VIEW BookedTour_AD AS
+SELECT BookedTourID, c.CustomerID, g.DriverLicense, c.firstName AS CustomerFirstName, 
+c.lastName AS CustomerLastName, c.age AS CustomerAge, TourName, PurchaseDate, TravelDate,
+g.firstName AS GuideFirstName, g.lastName AS GuideLastName, LicensePlate, TotalPrice
+FROM BookedTour bt, Guide g, Customer c, Tour t
+WHERE bt.driverlicense = g.driverlicense 
+	AND bt.customerid = c.customerid 
+	AND bt.tourID = t.tourid;
 
 SET SERVEROUTPUT ON FORMAT WORD_WRAPPED;
 
@@ -162,7 +173,7 @@ END;
 	This will error out if the Bus that is entered was not made after Jan 1 of 2010
 */
 PROMPT =========BUSAGECHECKING=========
-CREATE TRIGGER BusAgeChecking
+CREATE OR REPLACE TRIGGER BusAgeChecking
 BEFORE INSERT OR UPDATE ON Vehicle
 FOR EACH ROW
 BEGIN 

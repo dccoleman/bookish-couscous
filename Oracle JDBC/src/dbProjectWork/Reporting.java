@@ -112,7 +112,64 @@ public class Reporting {
 			
 			break;
 		case 3:
-			System.out.println("Report Booked Tour Information");
+			try {
+				System.out.println("Enter Booked Tour ID: ");
+				Scanner scan = new Scanner(System.in);
+				long i = scan.nextLong();
+				ResultSet rset = db.query("SELECT * FROM BookedTour_AD WHERE BookedTourID = " + Long.toString(i));
+				//ResultSet travelingRset = db.query("Add query here");
+				int custID = 0,bookedTourID = 0,licensePlate = 0;
+				String custFirstName = "", custLastName = "", guideFirstName = "", guideLastName = "", tourName = "";
+				String purchaseDate = "",travelDate = "";
+				int age = 0;
+				int totalPrice = 0;
+				
+				while (rset.next() && rset != null) {
+					custID = rset.getInt("customerID");
+					bookedTourID = rset.getInt("bookedtourid");
+					custFirstName = rset.getString("Customerfirstname");
+					custLastName = rset.getString("customerlastname");
+					guideFirstName = rset.getString("guidefirstname");
+					guideLastName = rset.getString("guideLastName");
+					tourName = rset.getString("TourName");
+					totalPrice = rset.getInt("totalprice");
+					age = rset.getInt("customerAge");
+					purchaseDate = rset.getString("PurchaseDate");
+					travelDate = rset.getString("TravelDate");
+					licensePlate = rset.getInt("LicensePlate");
+					
+					System.out.println("Booked Tour ID: " +  bookedTourID);
+					System.out.println("Customer Name: " + custFirstName + " " + custLastName);
+					System.out.println("Customer Age: " + age);
+					System.out.println("People Traveling With: ");
+					ResultSet secondRes = db.query("SELECT firstname,lastname,age FROM customer c, (SELECT travelingwithid FROM travelingwith WHERE customerid = "+ custID +") t WHERE c.customerid = t.travelingwithid");
+					
+					//Setting up dummy variables
+					String secondaryFirstName = "";
+					String secondarylastName = "";
+					int cage = 0;
+					
+					while (secondRes.next() && secondRes != null) {
+						secondaryFirstName = secondRes.getString("firstname");
+						secondarylastName = secondRes.getString("lastname");
+						cage = secondRes.getInt("age");
+						System.out.println("	Name: " + secondaryFirstName + " " + secondarylastName + " " + cage);
+						
+					} // end while
+					
+					System.out.println("Tour Name: " + tourName);
+					System.out.println("Purchase Date: " + purchaseDate);
+					System.out.println("Travel Date: " + travelDate);
+					System.out.println("Tour Guide Name: " + guideFirstName + " " + guideLastName);
+					System.out.println("License Plate: " + licensePlate);
+					System.out.println("Total Price: " + totalPrice);
+				} // end whi
+			} catch (SQLException e) {
+				System.out.println("Get Data Failed! Check output console");
+				e.printStackTrace();
+				return;			
+			}
+			
 			break;
 		case 4:
 			System.out.println("Update Booked Tour Vehicle");
