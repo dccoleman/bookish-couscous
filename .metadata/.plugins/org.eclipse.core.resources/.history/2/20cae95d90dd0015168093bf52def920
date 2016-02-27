@@ -194,14 +194,14 @@ public class Reporting {
 }
 
 
-public class SomeDatabase {
+public class Database {
 	public String username;
 	public String password;
 	Connection connection;
 	
 	// Connection data here:
 	
-	public SomeDatabase(String username, String password){
+	public Database(String username, String password){
 		this.username = username;
 		this.password = password;
 		// Connect to the database
