@@ -53,7 +53,7 @@ public class Reporting {
 				System.out.println("Enter Customer ID: ");
 				Scanner scan = new Scanner(System.in);
 				int i = scan.nextInt();
-				System.out.println("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
+				//System.out.println("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
 				ResultSet rset = db.query("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
 				
 				//Setting up dummy variables
@@ -79,10 +79,37 @@ public class Reporting {
 				return;			
 			}
 			
-			
 			break;
 		case 2:
-			System.out.println("Report Tour Guide Information");
+			try {
+				System.out.println("Enter Tour Guide Driver License ");
+				Scanner scan = new Scanner(System.in);
+				long i = scan.nextLong();
+				//System.out.println("SELECT * FROM GUIDE WHERE DriverLicense = " + Integer.toString(i));
+				ResultSet rset = db.query("SELECT * FROM GUIDE WHERE DriverLicense = " + Long.toString(i));
+				
+				//Setting up dummy variables
+				long driversLicense = 0;
+				String firstName = "";
+				String lastName = "";
+				String title = "";
+				String vType = "";
+				
+				while (rset.next() && rset != null) {
+					driversLicense = rset.getLong("DriverLicense");
+					firstName = rset.getString("firstname");
+					lastName = rset.getString("lastname");
+					title = rset.getString("Title");
+					vType = rset.getString("VehicleType");
+
+					System.out.println("Drivers License: " + driversLicense + "   Name: " + firstName + " " + lastName + "   Title: " + title + "   Vehicle Type: " + vType);
+				} // end while
+			} catch (SQLException e) {
+				System.out.println("Get Data Failed! Check output console");
+				e.printStackTrace();
+				return;			
+			}
+			
 			break;
 		case 3:
 			System.out.println("Report Booked Tour Information");
