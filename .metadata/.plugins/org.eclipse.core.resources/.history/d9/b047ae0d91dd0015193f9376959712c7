@@ -93,7 +93,7 @@ public class Reporting {
 				Scanner scan = new Scanner(System.in);
 				int i = scan.nextInt();
 				//System.out.println("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
-				ResultSet rset = query("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
+				ResultSet rset = db.query("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
 				
 				//Setting up dummy variables
 				int custID = 0;

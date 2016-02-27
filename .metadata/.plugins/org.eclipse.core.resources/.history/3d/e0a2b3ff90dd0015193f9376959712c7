@@ -11,8 +11,8 @@ public class Reporting {
 	 * 
 	 * 
 	 */
-	public static Connection connection;
-	public static ResultSet query(String query) {
+	public Connection connection;
+	public ResultSet query(String query) {
 		ResultSet rset = null;
 		try {
 			Statement stmt = connection.createStatement();
@@ -24,7 +24,7 @@ public class Reporting {
 		return rset;
 	}
 	
-	public static void update(String update) {
+	public void update(String update) {
 		int rset = 0;
 		try {
 			Statement stmt = connection.createStatement();
@@ -93,7 +93,7 @@ public class Reporting {
 				Scanner scan = new Scanner(System.in);
 				int i = scan.nextInt();
 				//System.out.println("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
-				ResultSet rset = query("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
+				ResultSet rset = db.query("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
 				
 				//Setting up dummy variables
 				int custID = 0;
