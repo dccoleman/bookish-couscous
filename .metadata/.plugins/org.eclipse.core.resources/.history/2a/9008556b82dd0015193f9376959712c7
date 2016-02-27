@@ -53,15 +53,14 @@ public class Reporting {
 				System.out.println("Enter Customer ID: ");
 				Scanner scan = new Scanner(System.in);
 				int i = scan.nextInt();
-				System.out.println("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
-				ResultSet rset = db.query("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
+				ResultSet rset = db.query("SELECT * FROM CUSTOMER WHERE customerID = " + i);
 				
 				//Setting up dummy variables
 				int custID = 0;
 				String firstName = "";
 				String lastName = "";
 				String address = "";
-				long phone = 0;
+				int phone = 0;
 				int age = 0;
 				
 				while (rset.next() && rset != null) {
@@ -70,7 +69,7 @@ public class Reporting {
 					lastName = rset.getString("lastname");
 					address = rset.getString("address");
 					age = rset.getInt("age");
-					phone = rset.getLong("phone");
+					phone = rset.getInt("phone");
 					System.out.println("ID: " + custID + "   Name: " + firstName + " " + lastName + "   Address: " + address + "   Phone Number: " + phone + "   Age: " + age);
 				} // end while
 			} catch (SQLException e) {
@@ -92,7 +91,6 @@ public class Reporting {
 			break;
 			
 		}
-		System.out.println("Ending");
 
 	}
 

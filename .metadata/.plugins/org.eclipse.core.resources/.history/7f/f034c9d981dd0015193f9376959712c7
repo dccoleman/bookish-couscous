@@ -53,25 +53,21 @@ public class Reporting {
 				System.out.println("Enter Customer ID: ");
 				Scanner scan = new Scanner(System.in);
 				int i = scan.nextInt();
-				System.out.println("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
-				ResultSet rset = db.query("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
+				ResultSet rset = db.query("SELECT * FROM CUSTOMER WHERE ID = " + i);
 				
 				//Setting up dummy variables
 				int custID = 0;
 				String firstName = "";
 				String lastName = "";
-				String address = "";
-				long phone = 0;
+				String city = "";
 				int age = 0;
 				
 				while (rset.next() && rset != null) {
-					custID = rset.getInt("customerID");
-					firstName = rset.getString("firstname");
-					lastName = rset.getString("lastname");
-					address = rset.getString("address");
+					custID = rset.getInt("ID");
+					custName = rset.getString("name");
+					city = rset.getString("city");
 					age = rset.getInt("age");
-					phone = rset.getLong("phone");
-					System.out.println("ID: " + custID + "   Name: " + firstName + " " + lastName + "   Address: " + address + "   Phone Number: " + phone + "   Age: " + age);
+					System.out.println("ID: " + custID + "   Name: " + custName + "   City: " + city + "   Age: " + age);
 				} // end while
 			} catch (SQLException e) {
 				System.out.println("Get Data Failed! Check output console");
@@ -92,7 +88,6 @@ public class Reporting {
 			break;
 			
 		}
-		System.out.println("Ending");
 
 	}
 
