@@ -3,12 +3,6 @@ import java.lang.Integer;
 import java.sql.*;
 import java.util.Scanner;
 
-
-
-
-
-
-
 public class Reporting {
 	/*
 	 * TO RUN FROM COMMAND LINE: 
@@ -17,34 +11,11 @@ public class Reporting {
 	 * 
 	 * 
 	 */
-	public static Connection connection;
-	public static ResultSet query(String query) {
-		ResultSet rset = null;
-		try {
-			Statement stmt = connection.createStatement();
-			rset = stmt.executeQuery(query);
-		} catch (SQLException e) {
-			System.out.println("Get Data Failed! Check output console");
-			e.printStackTrace();
-		}
-		return rset;
-	}
-	
-	public static void update(String update) {
-		int rset = 0;
-		try {
-			Statement stmt = connection.createStatement();
-			rset = stmt.executeUpdate(update);
-		} catch (SQLException e) {
-			System.out.println("Get Data Failed! Check output console");
-			e.printStackTrace();
-		}
-		return;
-	}
 	
 	public static void main(String[] args) {
 		String username;
 		String password;
+		Connection connection;
 		// Connect to the database
 		
 		int count = args.length;
@@ -99,7 +70,7 @@ public class Reporting {
 				Scanner scan = new Scanner(System.in);
 				int i = scan.nextInt();
 				//System.out.println("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
-				ResultSet rset = query("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
+				ResultSet rset = db.query("SELECT * FROM CUSTOMER WHERE customerID = " + Integer.toString(i));
 				
 				//Setting up dummy variables
 				int custID = 0;
@@ -187,7 +158,7 @@ public class Reporting {
 					System.out.println("Customer Name: " + custFirstName + " " + custLastName);
 					System.out.println("Customer Age: " + age);
 					System.out.println("People Traveling With: ");
-					ResultSet secondRes = query("SELECT firstname,lastname,age FROM customer c, (SELECT travelingwithid FROM travelingwith WHERE customerid = "+ custID +") t WHERE c.customerid = t.travelingwithid");
+					ResultSet secondRes = db.query("SELECT firstname,lastname,age FROM customer c, (SELECT travelingwithid FROM travelingwith WHERE customerid = "+ custID +") t WHERE c.customerid = t.travelingwithid");
 					
 					//Setting up dummy variables
 					String secondaryFirstName = "";
@@ -223,41 +194,12 @@ public class Reporting {
 			System.out.println("Enter New Vehicle License Plate: ");
 			long j = scan.nextLong();
 			
-		    update("UPDATE BookedTour SET licensePlate="+j+" WHERE bookedTourID = "+i);
+			db.update("UPDATE BookedTour SET licensePlate="+j+" WHERE bookedTourID = "+i);
 			break;
 			
 		}
-	}
-}
 
-
-public class SomeDatabase {
-	public String username;
-	public String password;
-	Connection connection;
-	
-	// Connection data here:
-	
-	public SomeDatabase(String username, String password){
-		this.username = username;
-		this.password = password;
-		// Connect to the database
-		try {
-			System.out.println("Connecting");
-			 connection = DriverManager.getConnection(
-			 		"jdbc:oracle:thin:@oracle.wpi.edu:1521:WPI11grxx", username, password);
-		} catch (SQLException e) {
-			System.out.println("Connection Failed! Check output console");
-			e.printStackTrace();
-			return;
-		}
-		
 	}
-	
-	public void whoIs(){
-		System.out.println("Username: "+this.username+" Password "+this.password);
-	}
-	
 	public ResultSet query(String query) {
 		ResultSet rset = null;
 		try {
@@ -281,5 +223,4 @@ public class SomeDatabase {
 		}
 		return;
 	}
-
 }

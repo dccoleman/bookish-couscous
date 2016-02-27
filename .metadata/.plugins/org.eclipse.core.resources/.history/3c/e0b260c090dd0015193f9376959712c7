@@ -1,4 +1,4 @@
-/*package dbProjectWork;
+package dbProjectWork;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +9,9 @@ import java.util.*;
 import java.sql.*;
 
 public class Database {
-	
+	public String username;
+	public String password;
+	Connection connection;
 	
 	// Connection data here:
 	
@@ -58,4 +60,3 @@ public class Database {
 	}
 
 }
-*/
