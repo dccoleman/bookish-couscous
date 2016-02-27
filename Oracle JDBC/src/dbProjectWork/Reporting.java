@@ -18,7 +18,7 @@ public class Reporting {
 			System.exit(1);
 		}
 		if (count == 2){
-			// Show the menue for arguments
+			// Show the menu for arguments
 			System.out.println("1 -- Report Customer Information");
 			System.out.println("2 -- Report Tour Guide Information");
 			System.out.println("3 -- Report Booked Tour Information");
@@ -43,8 +43,23 @@ public class Reporting {
 		
 		System.out.println("System Initilizing...");
 		Database db = new Database(args[0], args[1]);
-		db.whoIs();
-		System.out.println("Your argument is: "+ Integer.toString(decision));
+		//db.whoIs();
+		//System.out.println("Your argument is: "+ decision);
+		switch (decision) {
+		case 1:
+			System.out.println("Report Customer Information");
+			break;
+		case 2:
+			System.out.println("Report Tour Guide Information");
+			break;
+		case 3:
+			System.out.println("Report Booked Tour Information");
+			break;
+		case 4:
+			System.out.println("Update Booked Tour Vehicle");
+			break;
+			
+		}
 
 	}
 

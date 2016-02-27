@@ -1,6 +1,4 @@
 import java.sql.*;
-
-
 public class otest {
 		// Replace the "USERID" and "PASSWORD" with your username and password to get this to work.
 		// Note: Remember that your Oracle USERID for many of you is different than your regular login name
@@ -8,7 +6,7 @@ public class otest {
     		private static final String PASSWORD = "DCCOLEMAN";
 
 	public static void main(String[] args) {
-		System.out.println("-------Oracle JDBC COnnection Testing ---------");
+		System.out.println("-------Oracle JDBC Connection Testing ---------");
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			
@@ -33,6 +31,7 @@ public class otest {
 		
 		// Performing the query
 		try {
+			System.out.println("starting connection");
 			Statement stmt = connection.createStatement();
 			String str = "SELECT * FROM CUSTOMER";
 			ResultSet rset = stmt.executeQuery(str);
@@ -42,7 +41,7 @@ public class otest {
 			String city = "";
 			int age = 0;
 			// Process the results
-			System.out.println("beginning");
+			System.out.println("Processing results");
 			while (rset.next()) {
 				custID = rset.getInt("ID");
 				custName = rset.getString("name");
@@ -50,7 +49,6 @@ public class otest {
 				age = rset.getInt("age");
 				System.out.println("ID: " + custID + "   Name: " + custName + "   City: " + city + "   Age: " + age);
 			} // end while
-			System.out.println("Ended loop");
 						
 			rset.close();
 			stmt.close();
