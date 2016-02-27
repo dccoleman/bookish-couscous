@@ -48,7 +48,7 @@ public class Database {
 	}
 	
 	public void update(String update) {
-		int rset = 0;
+		ResultSet rset = null;
 		try {
 			Statement stmt = connection.createStatement();
 			rset = stmt.executeUpdate(update);

@@ -56,6 +56,9 @@ public class Database {
 			System.out.println("Get Data Failed! Check output console");
 			e.printStackTrace();
 		}
+		if (rset != 0) {
+			System.out.println("Error! Shit went down");;
+		}
 		return;
 	}
 

@@ -46,17 +46,5 @@ public class Database {
 		}
 		return rset;
 	}
-	
-	public void update(String update) {
-		int rset = 0;
-		try {
-			Statement stmt = connection.createStatement();
-			rset = stmt.executeUpdate(update);
-		} catch (SQLException e) {
-			System.out.println("Get Data Failed! Check output console");
-			e.printStackTrace();
-		}
-		return;
-	}
 
 }

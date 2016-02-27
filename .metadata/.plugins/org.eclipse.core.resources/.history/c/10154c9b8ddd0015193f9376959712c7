@@ -47,8 +47,8 @@ public class Database {
 		return rset;
 	}
 	
-	public void update(String update) {
-		int rset = 0;
+	public ResultSet update(String update) {
+		ResultSet rset = null;
 		try {
 			Statement stmt = connection.createStatement();
 			rset = stmt.executeUpdate(update);
@@ -56,7 +56,7 @@ public class Database {
 			System.out.println("Get Data Failed! Check output console");
 			e.printStackTrace();
 		}
-		return;
+		return rset;
 	}
 
 }

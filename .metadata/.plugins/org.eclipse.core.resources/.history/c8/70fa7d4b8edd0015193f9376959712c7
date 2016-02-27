@@ -177,11 +177,10 @@ public class Reporting {
 			long i = scan.nextLong();
 			System.out.println("Enter New Vehicle License Plate: ");
 			long j = scan.nextLong();
-			
-			db.update("UPDATE BookedTour SET licensePlate="+j+" WHERE bookedTourID = "+i);
 			break;
 			
 		}
+		System.out.println("Ending");
 
 	}
 

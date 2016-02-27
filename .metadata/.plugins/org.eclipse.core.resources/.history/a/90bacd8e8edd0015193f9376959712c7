@@ -172,16 +172,24 @@ public class Reporting {
 			
 			break;
 		case 4:
-			System.out.println("Enter Booked Tour ID: ");
-			Scanner scan = new Scanner(System.in);
-			long i = scan.nextLong();
-			System.out.println("Enter New Vehicle License Plate: ");
-			long j = scan.nextLong();
-			
-			db.update("UPDATE BookedTour SET licensePlate="+j+" WHERE bookedTourID = "+i);
+			try {
+				System.out.println("Enter Booked Tour ID: ");
+				Scanner scan = new Scanner(System.in);
+				long i = scan.nextLong();
+				System.out.println("Enter New Vehicle License Plate: ");
+				long j = scan.nextLong();
+				
+				db.update("UPDATE BookedTour SET licensePlate="+j+" WHERE bookedTourID = "+i);
+				
+			} catch(SQLException e) {
+				System.out.println("Get Data Failed!");
+				e.printStackTrace();
+				return;
+			}
 			break;
 			
 		}
+		System.out.println("Ending");
 
 	}
 
