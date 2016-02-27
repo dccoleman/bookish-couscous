@@ -1,7 +1,6 @@
 package dbProjectWork;
 import java.lang.Integer;
 import java.sql.*;
-import java.util.Scanner;
 
 public class Reporting {
 	/*
@@ -49,31 +48,18 @@ public class Reporting {
 		//System.out.println("Your argument is: "+ decision);
 		switch (decision) {
 		case 1:
-			try {
-				System.out.println("Enter Customer ID: ");
-				Scanner scan = new Scanner(System.in);
-				int i = scan.nextInt();
-				ResultSet rset = db.query("SELECT * FROM CUSTOMER WHERE ID = " + i);
-				
-				//Setting up dummy variables
-				int custID = 0;
-				String custName = "";
-				String city = "";
-				int age = 0;
-				
-				while (rset.next() && rset != null) {
-					custID = rset.getInt("ID");
-					custName = rset.getString("name");
-					city = rset.getString("city");
-					age = rset.getInt("age");
-					System.out.println("ID: " + custID + "   Name: " + custName + "   City: " + city + "   Age: " + age);
-				} // end while
-			} catch (SQLException e) {
-				System.out.println("Get Data Failed! Check output console");
-				e.printStackTrace();
-				return;			
-			}
-			
+			System.out.println("Report Customer Information");
+			System.out.println("Customer ID: ");
+			ResultSet rset = db.query("SELECT * FROM CUSTOMER WHERE ID = 1");
+			int custID;
+			String custName = "";
+			while (rset.next() && rset != null) {
+				custID = rset.getInt("ID");
+				custName = rset.getString("name");
+				city = rset.getString("city");
+				age = rset.getInt("age");
+				System.out.println("ID: " + custID + "   Name: " + custName + "   City: " + city + "   Age: " + age);
+			} // end while
 			
 			break;
 		case 2:

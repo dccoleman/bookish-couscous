@@ -1,7 +1,6 @@
 package dbProjectWork;
 import java.lang.Integer;
 import java.sql.*;
-import java.util.Scanner;
 
 public class Reporting {
 	/*
@@ -50,10 +49,9 @@ public class Reporting {
 		switch (decision) {
 		case 1:
 			try {
-				System.out.println("Enter Customer ID: ");
-				Scanner scan = new Scanner(System.in);
-				int i = scan.nextInt();
-				ResultSet rset = db.query("SELECT * FROM CUSTOMER WHERE ID = " + i);
+				System.out.println("Report Customer Information");
+				System.out.println("Customer ID: ");
+				ResultSet rset = db.query("SELECT * FROM CUSTOMER WHERE ID = 2");
 				
 				//Setting up dummy variables
 				int custID = 0;

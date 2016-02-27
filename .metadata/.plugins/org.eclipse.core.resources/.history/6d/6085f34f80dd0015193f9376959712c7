@@ -39,7 +39,8 @@ public class Database {
 		ResultSet rset = null;
 		try {
 			Statement stmt = connection.createStatement();
-			rset = stmt.executeQuery(query);
+			String str = "SELECT * FROM CUSTOMER";
+			rset = stmt.executeQuery(str);
 		} catch (SQLException e) {
 			System.out.println("Get Data Failed! Check output console");
 			e.printStackTrace();

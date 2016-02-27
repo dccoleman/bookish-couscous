@@ -51,9 +51,15 @@ public class Reporting {
 		case 1:
 			try {
 				System.out.println("Enter Customer ID: ");
+				System.out.println(prompt);
 				Scanner scan = new Scanner(System.in);
 				int i = scan.nextInt();
-				ResultSet rset = db.query("SELECT * FROM CUSTOMER WHERE ID = " + i);
+				if(i < 0){
+					return -1;
+				}else{
+					return i;
+				}
+				ResultSet rset = db.query("SELECT * FROM CUSTOMER WHERE ID = 2");
 				
 				//Setting up dummy variables
 				int custID = 0;
