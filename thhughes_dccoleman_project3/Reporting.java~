@@ -1,4 +1,4 @@
-//package dbProjectWork;
+package dbProjectWork;
 import java.lang.Integer;
 import java.sql.*;
 import java.util.Scanner;
